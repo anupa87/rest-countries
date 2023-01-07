@@ -1,21 +1,25 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+
 import {initializeCountries} from "../features/countries/countriesSlice";
 import Header from "../components/Header";
 
-import { Box, CircularProgress } from "@mui/material";
-import Paper from '@mui/material/Paper';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TablePagination from '@mui/material/TablePagination';
-import TableRow from '@mui/material/TableRow';
-import ImageListItem from "@mui/material/ImageListItem";
-import Tooltip from "@mui/material/Tooltip";
-import IconButton from "@mui/material/IconButton";
+import { 
+  Box, 
+  CircularProgress,
+  Paper, 
+  Table, 
+  TableBody, 
+  TableCell, 
+  TableContainer, 
+  TableHead, 
+  TablePagination, 
+  TableRow,
+  ImageListItem,
+  Tooltip,
+  IconButton
+} from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 
@@ -50,7 +54,7 @@ const Countries = () => {
     },
     {
       id: "detail",
-      label: "Detail",
+      label: "",
       minWidth: 100,
       //   align: "right",
     },
