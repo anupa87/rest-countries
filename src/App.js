@@ -6,7 +6,7 @@ import Countries from "./components/Countries";
 import CountryDetail from "./components/CountryDetail";
 
 
-import './App.css';
+
 
 const App= () => {
   return (
