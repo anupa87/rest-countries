@@ -16,7 +16,6 @@ import TableRow from '@mui/material/TableRow';
 import ImageListItem from "@mui/material/ImageListItem";
 import Tooltip from "@mui/material/Tooltip";
 import IconButton from "@mui/material/IconButton";
-import Link from "@mui/material/Link";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 
@@ -97,13 +96,8 @@ const Countries = () => {
     );
     const detail = (
       <Tooltip title="See more">
-        <IconButton>
-          <Link
-            onClick={() => handleCountryDetail(row)}
-            // to={`/countries/${row.name.common}`}
-          >
-            <ChevronRightIcon sx={{ fontSize: 20, color: "black" }} />
-          </Link>
+        <IconButton onClick={() => handleCountryDetail(row)}>
+            <ChevronRightIcon sx={{ fontSize: 20, color: "black" }} />   
         </IconButton>
       </Tooltip>
     );
