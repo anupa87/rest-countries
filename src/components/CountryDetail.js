@@ -43,7 +43,7 @@ console.log("test", country)
         setCountryInfo(res.data[0]);
         console.log(res.data[0]);
       });
-  }, []);
+  }, [country]);
 
   const [expanded, setExpanded] = useState(false);
 
@@ -53,7 +53,7 @@ console.log("test", country)
 
   return (
     countryInfo && (
-    <Card sx={{ maxWidth: 520, m: "auto", mt: 5 }}>
+    <Card sx={{ maxWidth: 520, m: "auto", mt: 25 }}>
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -109,7 +109,6 @@ console.log("test", country)
         </CardContent>
       </Collapse>
     </Card>
-
   )
   );
 }

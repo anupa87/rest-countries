@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import {initializeCountries, search} from "../features/countries/countriesSlice";
+import {initializeCountries} from "../features/countries/countriesSlice";
+import Header from "../components/Header";
 
+import { Box, CircularProgress } from "@mui/material";
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -18,8 +20,6 @@ import Link from "@mui/material/Link";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 
-
-
 const Countries = () => {
   const countriesList = useSelector((state) => state.countries.countries);
   const isLoading = useSelector((state) => state.countries.isLoading);
@@ -31,10 +31,6 @@ const Countries = () => {
     dispatch(initializeCountries());
   }, [dispatch]);
   console.log(countriesList);
-
-  const handleSearch = (e) => {
-    dispatch(search(e.target.value.trim()));
-  };
 
   const columns = [
     { id: 'flag', label: 'Flag', minWidth: 100 },
@@ -139,9 +135,22 @@ const Countries = () => {
     setPage(0);
   };
 
-
+  if (isLoading) {
+    return (
+    <Box
+    sx={{
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    }}
+  >
+    <CircularProgress />
+  </Box>
+);
+  }
   return (
     <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+       <Header />
       <TableContainer sx={{ maxHeight: 550 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
@@ -197,4 +206,6 @@ const Countries = () => {
   )
 }
 
-export default Countries
+
+
+export default Countries;
