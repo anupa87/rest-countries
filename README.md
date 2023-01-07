@@ -17,6 +17,9 @@ This is a simple React-Redux application which uses REST Countries API. It can b
     - Redux
     - MUI
 
+## Deployment
+    - https://rest-countries-6rr96vp3d-anupa87.vercel.app/
+
 ## Authors and acknowledgment
     - Anupa Thapa
     - https://github.com/anupa87
