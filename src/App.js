@@ -5,9 +5,6 @@ import Layout from "./pages/Layout";
 import Countries from "./components/Countries";
 import CountryDetail from "./components/CountryDetail";
 
-
-
-
 const App= () => {
   return (
    <BrowserRouter>

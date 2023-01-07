@@ -1,5 +1,8 @@
 import React from 'react'
 
+import { search } from '../features/countries/countriesSlice';
+import { useDispatch } from 'react-redux';
+
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -17,10 +20,11 @@ const Search = styled('div')(({ theme }) => ({
   '&:hover': {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
+  marginRight: theme.spacing(2),
   marginLeft: 0,
   width: '100%',
   [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(1),
+    marginLeft: theme.spacing(3),
     width: 'auto',
   },
 }));
@@ -43,16 +47,15 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
     width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: '12ch',
-      '&:focus': {
-        width: '20ch',
-      },
+    [theme.breakpoints.up('md')]: {
+      width: '20ch',
     },
   },
 }));
 
-export default function Header() {
+const Header =() => {
+  const dispatch = useDispatch();
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -79,8 +82,11 @@ export default function Header() {
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Search…"
+              placeholder="Search by country name"
               inputProps={{ 'aria-label': 'search' }}
+              onChange={e => dispatch(search(e.target.value))}
+              onBlur={e => dispatch(search(e.target.value))}
+              autoFocus
             />
           </Search>
         </Toolbar>
@@ -89,3 +95,4 @@ export default function Header() {
   );
 }
 
+export default Header;

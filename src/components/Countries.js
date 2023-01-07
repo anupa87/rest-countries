@@ -104,7 +104,7 @@ const Countries = () => {
         <IconButton>
           <Link
             onClick={() => handleCountryDetail(row)}
-            to={`/countries/${row.name.common}`}
+            // to={`/countries/${row.name.common}`}
           >
             <ChevronRightIcon sx={{ fontSize: 20, color: "black" }} />
           </Link>
