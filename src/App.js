@@ -14,7 +14,7 @@ const App= () => {
    <Routes>
     <Route exact path='/' element= {<Layout/>}>
       <Route path='/' element= {<Countries/>}/>
-      <Route path='/countries/:country' element= {<CountryDetail/>}/>
+      <Route path='/countries/:country' element= {<CountryDetail/>}/> 
     </Route>
    </Routes>
    </BrowserRouter>

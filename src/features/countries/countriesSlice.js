@@ -12,7 +12,7 @@ export const countriesSlice = createSlice({
   reducers: {
     getCountries(state, action) {
       state.countries = action.payload;
-      console.log(getCountries);
+     
     },
     isLoading(state, action) {
       state.isLoading = action.payload;
@@ -28,9 +28,9 @@ export const initializeCountries = () => {
     const countries = await countryService.getAll();
     dispatch(getCountries(countries));
     dispatch(isLoading(false));
-    console.log(countries)
   };
 };
 
 export const { getCountries, isLoading, search } = countriesSlice.actions;
+
 export default countriesSlice.reducer;
